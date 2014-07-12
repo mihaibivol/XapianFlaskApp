@@ -1,0 +1,6 @@
+*.pyc
+
+xapian_db
+static/data_files
+
+*.sw[op]

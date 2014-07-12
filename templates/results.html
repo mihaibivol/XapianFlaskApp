@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<h1> Xapian Search </h1>
+<form action='/search' method='GET'>
+  <input name='q' type='text'></input>
+  <input type='submit' value='go'>
+</form>
+<title>Results for {{query}}</title>
+
+
+<h3>Results for <span>{{query}}</span></h3>
+<ul>
+{% for r in results %}
+<li>
+<a href='/files/{{r.name}}'><h4>{{r.name}}</h4></a>
+<div>{{r.snippet}}</div>
+</li>
+{% endfor %}
+</ul>
+
