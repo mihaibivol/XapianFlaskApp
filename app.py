@@ -52,8 +52,9 @@ def search():
 
 @app.route('/files/<fname>')
 def download_file(fname):
-    return flask.redirect(flask.url_for('static', filename='img/' + fname),
-                          code=301)
+    return flask.redirect(
+            flask.url_for('static', filename=settings.FILES_PATH + fname),
+            code=301)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
