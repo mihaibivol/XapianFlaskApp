@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<title> Search using Xapian </title>
-<div style="margin:auto; width:300px">
+{% extends "layout.html" %}
+
+{% block body %}
+<div class=searchbox id=search>
 <h1>Search using Xapian</h1>
-<div style="margin:auto; width:230px">
 <form action='/search' method='GET'>
   <input name='q' type='text'></input>
   <input type='submit' value='go'>
 </form>
 </div>
-</div>
+{% endblock %}

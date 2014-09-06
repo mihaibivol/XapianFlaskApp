@@ -1,19 +1,23 @@
-<!DOCTYPE html>
-<h1> Xapian Search </h1>
+{% extends "layout.html" %}
+{% block body %}
+<div class="searchbox" id="topbar">
 <form action='/search' method='GET'>
+  <a href="/"><span class="strong light"> Xapian Search </span></a>
   <input name='q' type='text'></input>
   <input type='submit' value='go'>
 </form>
-<title>Results for {{query}}</title>
+</div>
 
-
-<h3>Results for <span>{{query}}</span></h3>
-<ul>
+<div id="searchresults">
+<h3>You searched for: <span class=strong>{{query}}</span></h3>
+<ul id=result-list>
 {% for r in results %}
 <li>
-<a href='/files/{{r.name}}'><h4>{{r.name}}</h4></a>
-<div>{{r.snippet}}</div>
+<a href='http://en.wikipedia.org/wiki/{{r.name}}'><h4 class=doc-link>{{r.name}}</h4></a>
+<div class=snippet>{{r.snippet}}</div>
 </li>
 {% endfor %}
 </ul>
+</div>
+{% endblock %}
 
