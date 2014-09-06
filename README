@@ -1,0 +1,2 @@
+Flask application that can index a wikipedia Dump and use Xapian
+to search it and produce relevant snippets by using the ```Snipper``` class.
