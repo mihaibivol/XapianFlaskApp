@@ -1,0 +1,96 @@
+html {
+  background-color: #f8f8f8;
+  color: #030303;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  color: #030303;
+}
+
+#body {
+  padding: 20px;
+}
+
+#search {
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.searchbox input[type=text] {
+  width: 300px;
+  font-size: 20px;
+}
+
+.searchbox input {
+  height: 30px;
+}
+
+.searchbox input[type=submit] {
+  border-radius: 4px;
+  border: 0 none;
+  width: 30px;
+  cursor: pointer;
+}
+
+#topbar {
+  background-color: #010101;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.strong {
+  font-weight: bold;
+  color: #200020;
+  font-size: 22px;
+}
+
+.light {
+  color: #f8f8f8;
+}
+
+#searchresults {
+  margin-top: 40px;
+}
+
+#result-list {
+  list-style: none;
+}
+
+#result-list a {
+  color: #ffffff;
+}
+
+#result-list .doc-link {
+  background-color: #200020;
+  font-size: 19px;
+  padding: 3px;
+  padding-left: 20px;
+  margin: 0;
+}
+
+#result-list .snippet {
+  background-color: #fefed6;
+  color: #010101;
+  margin: 0px;
+  padding: 20px;
+}
+
+#result-list li {
+  margin: 10px;
+  border-style: none none solid none;
+  border-color: #200020;
+  border-width: 5px;
+}
