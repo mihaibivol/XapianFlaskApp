@@ -9,8 +9,8 @@ app = flask.Flask(__name__, static_folder='static')
 app.config.from_object(__name__)
 
 app.config.update({
-#    'DEBUG':True
-    })
+    'DEBUG':True
+})
 
 database = xapian.Database(settings.DATABASE_NAME)
 
@@ -26,7 +26,7 @@ def search():
     qp = xapian.QueryParser()
 
     stemmer = xapian.Stem('english')
-    #snipper = xapian.Snipper()
+    snipper = xapian.Snipper()
 
     qp.set_stemmer(stemmer)
     qp.set_database(database)
@@ -37,15 +37,14 @@ def search():
 
     mset = enquire.get_mset(0, 10)
 
-    #snipper.set_mset(mset)
-    #snipper.set_stemmer(stemmer)
+    snipper.set_mset(mset)
+    snipper.set_stemmer(stemmer)
 
     results = []
     for m in mset:
         results.append({
             'name': m.document.get_value(settings.VALUENO_DOC_NUM),
-            'snippet': #snipper.generate_snippet(m.document.get_data(),
-                                                m.document.get_data()[:500]})
+            'snippet': snipper.generate_snippet(m.document.get_data())})
 
     for r in results:
         r['name'] = r['name'].decode('utf-8')
